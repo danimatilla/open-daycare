@@ -1,3 +1,27 @@
+# Repository instructions
+
+## Verification
+
+- `npm run lint` (ESLint 9 flat config) and `npm run build`. There are no test, format, or typecheck scripts; use `npx tsc --noEmit` for types.
+
+## Architecture quirks
+
+- Next.js 16 App Router with `app/` at the repo root (no `src/`); `@/*` resolves to the repo root, not `src/`.
+- Tailwind v4 is loaded via `@tailwindcss/turbopack` rules in `next.config.ts`; there is no `tailwind.config.*` or PostCSS config. Global styles live in `app/globals.css`.
+- `next.config.ts` enables `cacheComponents` and `partialPrefetching`. Read the matching guides in `node_modules/next/dist/docs/` before changing data fetching, caching, or Suspense code.
+- `app/layout.tsx` uses the Next 16 typed global `LayoutProps<"/">` — don't replace it with an explicit props type.
+
+## UI source of truth
+
+- `references/screens/*.dc.html` are the real screen mockups (login, feed, niños, cuenta, ...); `references/screenshots/*.png` are the visual references. `README.md` and `app/page.tsx` are create-next-app boilerplate.
+- User-facing copy is Spanish with Rioplatense voseo (`Publicá`, `Ingresá`, `Compartí`), matching the mockups.
+- `references/screens/support.js` is generated from `dc-runtime` — never edit it.
+
+## Spec-driven workflow
+
+- Large features go through the user-invoked skills in `.agents/skills/` (pinned in `skills-lock.json`): `/spec` writes `specs/NN-slug.md` as Draft and seeds `specs/.spec-config.yml`; the user approves it; `/spec-impl NN-slug` then creates branch `spec-NN-slug` and implements step by step.
+- Both skills set `disable-model-invocation: true`: the user runs them. Don't auto-invoke them or invent a different `specs/` layout. `specs/` does not exist yet.
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 ## This is NOT the Next.js you know
