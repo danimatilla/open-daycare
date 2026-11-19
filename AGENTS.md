@@ -22,6 +22,12 @@
 - Large features go through the user-invoked skills in `.agents/skills/` (pinned in `skills-lock.json`): `/spec` writes `specs/NN-slug.md` as Draft and seeds `specs/.spec-config.yml`; the user approves it; `/spec-impl NN-slug` then creates branch `spec-NN-slug` and implements step by step.
 - Both skills set `disable-model-invocation: true`: the user runs them. Don't auto-invoke them or invent a different `specs/` layout. `specs/` does not exist yet.
 
+## Code rules
+
+- Clean code
+- Codificamos en inglés.
+- Comentarios inline en inglés
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 ## This is NOT the Next.js you know
