@@ -31,8 +31,14 @@ Before the final response, run one reporting pass. If candidates remain, from th
 
 <!-- BEGIN:mcp-playwright -->
 
-- Cualquier cosa de Playwright, por ejemplo screenshots, deben guardarse en el directorio `.playwright-mcp`
+- Cualquier cosa de `Playwright`, por ejemplo screenshots, deben guardarse en el directorio `.playwright-mcp`
 
 <!-- END:mcp-playwright -->
+
+<!-- BEGIN:mcp-context7 -->
+
+- Usamos `Context7` para consultar documentación actualizada del framework utiliado.
+
+<!-- END:mcp-context7 -->
 
 
