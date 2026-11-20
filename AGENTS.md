@@ -14,7 +14,6 @@
 ## UI source of truth
 
 - `references/screens/*.dc.html` are the real screen mockups (login, feed, niños, cuenta, ...); `references/screenshots/*.png` are the visual references. `README.md` and `app/page.tsx` are create-next-app boilerplate.
-- User-facing copy is Spanish with Rioplatense voseo (`Publicá`, `Ingresá`, `Compartí`), matching the mockups.
 - `references/screens/support.js` is generated from `dc-runtime` — never edit it.
 
 ## Spec-driven workflow
