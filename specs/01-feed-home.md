@@ -1,6 +1,6 @@
 # SPEC 01 — Home: feed de la sala
 
-> **Estado:** Approved
+> **Estado:** Implemented
 > **Depende de:** —
 > **Fecha:** 2026-11-19
 > **Objetivo:** Reemplazar la home de Next.js por el feed de la sala Soles, replicando el mockup `references/screens/feed.dc.html` con datos mock en memoria y soporte responsive.
@@ -114,17 +114,17 @@ Convenciones:
 
 ## Acceptance criteria
 
-- [ ] `/` renderiza el feed con sidebar de 248px y contenido de 760px a 1024px de ancho o más.
-- [ ] A 390px de ancho se ve la top bar con logo, avatar, logout y hamburguesa, sin scroll horizontal.
-- [ ] El drawer abre desde la izquierda y muestra el CTA y los 4 ítems de navegación.
-- [ ] El drawer se cierra con Escape, con el botón de cerrar y con clic en el overlay.
-- [ ] Con el drawer abierto el fondo no scrollea y el foco queda atrapado dentro.
-- [ ] Se muestran los 3 posts con su tipo, autor, hora, audiencia, texto y contadores; el de actividad incluye el placeholder "Foto · pintando con témperas".
-- [ ] Los títulos usan Fredoka y el cuerpo Nunito; la paleta coincide con `#F6ECDF`, `#FFFDF9`, `#3F362E`, `#D9583C`; no quedan Geist ni estilos de tema oscuro.
-- [ ] Todos los enlaces placeholder usan `href="#"`; no existe ninguna ruta nueva además de `/`.
-- [ ] Likes y comentarios son texto estático, sin handlers.
-- [ ] `npm run lint`, `npx tsc --noEmit` y `npm run build` terminan sin errores.
-- [ ] Existen las tres capturas en `.playwright-mcp/` y no muestran diferencias de layout, color ni tipografía contra `references/screens/feed.dc.html`.
+- [x] `/` renderiza el feed con sidebar de 248px y contenido de 760px a 1024px de ancho o más.
+- [x] A 390px de ancho se ve la top bar con logo, avatar, logout y hamburguesa, sin scroll horizontal.
+- [x] El drawer abre desde la izquierda y muestra el CTA y los 4 ítems de navegación.
+- [x] El drawer se cierra con Escape, con el botón de cerrar y con clic en el overlay.
+- [x] Con el drawer abierto el fondo no scrollea y el foco queda atrapado dentro.
+- [x] Se muestran los 3 posts con su tipo, autor, hora, audiencia, texto y contadores; el de actividad incluye el placeholder "Foto · pintando con témperas".
+- [x] Los títulos usan Fredoka y el cuerpo Nunito; la paleta coincide con `#F6ECDF`, `#FFFDF9`, `#3F362E`, `#D9583C`; no quedan Geist ni estilos de tema oscuro.
+- [x] Todos los enlaces placeholder usan `href="#"`; no existe ninguna ruta nueva además de `/`.
+- [x] Likes y comentarios son texto estático, sin handlers.
+- [x] `npm run lint`, `npx tsc --noEmit` y `npm run build` terminan sin errores.
+- [x] Existen las tres capturas en `.playwright-mcp/` y no muestran diferencias de layout, color ni tipografía contra `references/screens/feed.dc.html`.
 
 ## Decisions
 
