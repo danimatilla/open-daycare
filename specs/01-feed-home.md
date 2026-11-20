@@ -1,6 +1,6 @@
 # SPEC 01 — Home: feed de la sala
 
-> **Estado:** Draft
+> **Estado:** Approved
 > **Depende de:** —
 > **Fecha:** 2026-11-19
 > **Objetivo:** Reemplazar la home de Next.js por el feed de la sala Soles, replicando el mockup `references/screens/feed.dc.html` con datos mock en memoria y soporte responsive.
