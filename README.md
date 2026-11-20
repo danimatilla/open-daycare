@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# OpenDayCare
+
+Guardería app: room feed for Soles, built from the screen mockups in `references/screens/`.
 
 ## Getting Started
 
-First, run the development server:
+Requires Node.js and npm.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). The home page (`app/page.tsx`) renders the room feed.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Verification
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npx tsc --noEmit
+npm run build
+```
 
-## Learn More
+There are no test or format scripts.
 
-To learn more about Next.js, take a look at the following resources:
+## Project layout
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `app/` — Next.js App Router (`app/page.tsx`, `app/components/`, `app/lib/`).
+- `references/screens/*.dc.html` — source-of-truth screen mockups; `references/screenshots/*.png` — visual references.
+- `specs/` — specs and `.spec-config.yml`.
+- `.agents/skills/` — user-invoked `/spec` and `/spec-impl` skills.
+- `.opencode/` — `/spec-verify` command and the `spec-verifier` agent.
+- `.playwright-mcp/` — Playwright screenshots.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Spec workflow
+
+1. `/spec <short feature description>` writes `specs/NN-slug.md` as Draft.
+2. You approve the spec.
+3. `/spec-impl NN-slug` creates the `spec-NN-slug` branch and implements it step by step.
+4. `/spec-verify NN-slug` checks the acceptance criteria against the code, Next.js docs (Context7) and the screens (Playwright), then updates the spec.
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) or deploy directly with [Vercel](https://vercel.com/new).

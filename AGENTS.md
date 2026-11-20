@@ -21,6 +21,13 @@
 - Large features go through the user-invoked skills in `.agents/skills/` (pinned in `skills-lock.json`): `/spec` writes `specs/NN-slug.md` as Draft and seeds `specs/.spec-config.yml`; the user approves it; `/spec-impl NN-slug` then creates branch `spec-NN-slug` and implements step by step.
 - Both skills set `disable-model-invocation: true`: the user runs them. Don't auto-invoke them or invent a different `specs/` layout. `specs/` does not exist yet.
 
+## Spec verification
+
+- `/spec-verify [NN | slug | NN-slug]` (`.opencode/commands/spec-verify.md`) lanza el agente `spec-verifier` (`.opencode/agents/spec-verifier.md`) como agente principal (`subagent: false`).
+- Verifica los acceptance criteria contra el código, Next.js vía Context7 y las pantallas vía Playwright; marca `- [x]` solo con evidencia y cambia el estado a `Implemented` si todo pasa.
+- Solo edita `specs/*.md`: no toca código, no comitea, no lanza subagentes y su shell queda limitado a `npm run lint`, `npx tsc --noEmit`, `npm run build`, `npm run dev` y `npm run start`. Los fallos se reportan, no se arreglan.
+- Las capturas se guardan en `.playwright-mcp/spec-NN-<pantalla>-<viewport>.png`.
+
 ## Code rules
 
 - Clean code
